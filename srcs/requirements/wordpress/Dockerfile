@@ -10,7 +10,7 @@ RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli
 
 RUN  mkdir -p /var/www/wordpress
 
-#COPY conf/www.conf /etc/php/8.2/fpm/pool.d/www.conf
+COPY conf/www.conf /etc/php/8.2/fpm/pool.d/www.conf
 COPY tools/init.sh /usr/local/bin/init.sh
 
 RUN chmod +x /usr/local/bin/init.sh
