@@ -21,6 +21,20 @@ services:
       - mariadb
     restart: always
 
+  nginx:
+    build: ./requirements/nginx
+    container_name: nginx
+    env_file: .env
+    ports:
+      - "443:443"
+    networks:
+      - inception
+    volumes:
+      - wordpress_data:/var/www/wordpress
+    depends_on:
+      - wordpress
+    restart: always
+
 networks:
   inception:
     driver: bridge
@@ -28,5 +42,13 @@ networks:
 volumes:
   mariadb_data:
     driver: local
+    driver_opts:
+      type: none
+      device: /home/wding/data/mariadb
+      o: bind
   wordpress_data:
     driver: local
+    driver_opts:
+      type: none
+      device: /home/wding/data/wordpress
+      o: bind
