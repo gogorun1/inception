@@ -11,8 +11,8 @@ down:
 
 clean:
 	$(COMPOSE) down -v --rmi all --remove-orphans
-	rm -rf /home/wding/data/mariadb
-	rm -rf /home/wding/data/wordpress
+	sudo rm -rf /home/wding/data/mariadb
+	sudo rm -rf /home/wding/data/wordpress
 
 re: clean all
 
