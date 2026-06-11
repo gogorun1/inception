@@ -4,7 +4,7 @@
 
 ## Description
 
-Inception is a 42 system administration project that builds a small web infrastructure entirely inside a virtual machine, using Docker and Docker Compose. The stack runs three services, each in its own dedicated container built from a custom Dockerfile based on Debian:
+Inception is a project that builds a small web infrastructure entirely inside a virtual machine, using Docker and Docker Compose. The stack runs three services, each in its own dedicated container built from a custom Dockerfile based on Debian:
 
 - **NGINX** — the only entry point, serving HTTPS on port 443 with TLSv1.2/1.3
 - **WordPress + php-fpm** — the application layer, without its own web server
